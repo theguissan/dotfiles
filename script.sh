@@ -4,11 +4,13 @@
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
-sudo mv 3270.zip CascadiaCode.zip /usr/local/share/fonts
-sudo unzip /usr/local/share/fonts/3270.zip
-sudo unzip /usr/local/share/fonts/CascadiaCode.zip
+#sudo mv 3270.zip CascadiaCode.zip /usr/local/share/fonts
+sudo unzip 3270.zip -d /usr/local/share/fonts
+sudo unzip CascadiaCode.zip -d /usr/local/share/fonts
 sudo apt install fonts-noto-color-emoji
+sudo apt install cava
 ##GIT##
+
 
 rm ~/.gitconfig
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -20,7 +22,7 @@ sudo ln -s ~/dotfiles/config.ini /etc/polybar/config.ini
 
 ##ALACRITTY##
 
-rm ~/.config/alacritty/alacritty/alacritty.toml
+rm ~/.config/alacritty/alacritty.toml
 ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 ##i3##
