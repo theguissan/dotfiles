@@ -8,7 +8,7 @@
 #bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 #curl -sS https://starship.rs/install.sh | sh
-sudo apt install polybar unzip neofetch rofi picom
+sudo apt install polybar unzip neofetch rofi picom cava
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
