@@ -1,7 +1,14 @@
 #!/bin/bash
 
 ##BAIXANDO DEPENDENCIAS##
+sudo apt install zsh
+chsh -s $(which zsh)
 
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+
+curl -sS https://starship.rs/install.sh | sh
+sudo apt install polybar
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
 #sudo mv 3270.zip CascadiaCode.zip /usr/local/share/fonts
@@ -14,6 +21,12 @@ sudo apt install cava
 
 rm ~/.gitconfig
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+
+
+#ZSH#
+
+sudo rm ~/.zshrc
+cp ~/dotfiles/.zshrc ~/.zshrc
 
 ##POLYBAR##
 
