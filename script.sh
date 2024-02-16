@@ -1,14 +1,15 @@
 #!/bin/bash
 
 ##BAIXANDO DEPENDENCIAS##
-sudo apt install zsh
-chsh -s $(which zsh)
+#sudo apt install zsh
+#chsh -s $(which zsh)
 
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+#sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+#bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
-curl -sS https://starship.rs/install.sh | sh
-sudo apt install polybar
+#curl -sS https://starship.rs/install.sh | sh
+sudo apt install polybar unzip neofetch rofi picom
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
 #sudo mv 3270.zip CascadiaCode.zip /usr/local/share/fonts
@@ -37,6 +38,18 @@ sudo ln -s ~/dotfiles/config.ini /etc/polybar/config.ini
 
 rm ~/.config/alacritty/alacritty.toml
 ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+i
+
+##NEOFETCH##
+
+rm ~/.config/neofetch/config.conf
+ln -s ~/dotfiles/config.conf ~/.config/neofetch/config.conf
+
+
+#STARSTHIP
+
+rm ~/.config/starsthip.toml
+ln -s ~/dotfiles/starship.toml ~/.config/startship.toml
 
 ##i3##
 

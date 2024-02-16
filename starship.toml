@@ -1,0 +1,16 @@
+add_newline=false
+
+[hostname]
+ssh_only=false
+style="bold red dimmed"
+
+[username]
+show_always=true
+format="[$user]($style) on "
+style_user="green bold"
+style_root="black bold"
+[nodejs]
+symbol="⬢ "
+format="via [⬢ $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
