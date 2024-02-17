@@ -69,10 +69,10 @@ bindsym $mod+d exec rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -93,7 +93,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -210,8 +210,8 @@ exec --no-startup-id polybar example -r
 
 exec_always feh --bg-fill $HOME/dotfiles/wallpaper.jpg
 exec_always picom -f
-
-
+#exec "setxkbmap -layout us,br"
+exec --no-startup-id setxkbmap -layout 'us, br' -option 'grp:win_space_toggle'  
 
 
 client.focused #74ac6d #285577 #ffffff #74ac6d #74ac6d
