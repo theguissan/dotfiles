@@ -10,14 +10,14 @@
 #bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 #curl -sS https://starship.rs/install.sh | sh
-sudo apt install polybar \
-	unzip \
+sudo apt install unzip \
 	neofetch \
 	rofi \
 	picom \
 	cava \
 	fonts-noto-color-emoji \
-	cava
+	cava \
+	alacritty
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
@@ -27,7 +27,8 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.z
 sudo unzip 3270.zip -d /usr/local/share/fonts
 sudo unzip CascadiaCode.zip -d /usr/local/share/fonts
 sudo unzip FiraCode.zip -d /usr/local/share/fonts
-rm FiraCode.zip CascadiaCode.zip
+rm FiraCode.zip CascadiaCode.zip 3270.zip
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 ##GIT##
 
 
@@ -38,29 +39,22 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 #ZSH#
 
 sudo rm ~/.zshrc
-cp ~/dotfiles/.zshrc ~/.zshrc
-
-##POLYBAR##
-
-sudo rm /etc/polybar/config.ini
-sudo ln -s ~/dotfiles/config.ini /etc/polybar/config.ini
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 ##ALACRITTY##
 
-rm ~/.config/alacritty/alacritty.toml
-ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-i
+rm ~/.config/alacritty/alacritty.yml
+ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 ##NEOFETCH##
 
 rm ~/.config/neofetch/config.conf
 ln -s ~/dotfiles/config.conf ~/.config/neofetch/config.conf
 
-
 #STARSTHIP
 
-rm ~/.config/starsthip.toml
-ln -s ~/dotfiles/starship.toml ~/.config/startship.toml
+rm ~/.config/starship.toml
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 ##i3##
 
@@ -71,3 +65,9 @@ ln -s ~/dotfiles/config ~/.config/i3/config
 
 rm ~/.config/neofetch/config.conf
 ln -s ~/dotfiles/config.conf ~/.config/neofetch/config.conf
+
+##i3blocks##
+
+
+rm ~/.i3blocks.conf
+ln -s ~/dotfiles/.i3blocks.conf ~/.i3blocks.conf
