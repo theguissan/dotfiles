@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH="/home/m/development/idea-IU-233.14808.21/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -130,3 +130,4 @@ eval "$(starship init zsh)"
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 alias ls="colorls --sd"
+
