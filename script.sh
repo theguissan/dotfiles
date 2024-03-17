@@ -68,6 +68,9 @@ ln -s ~/dotfiles/config.conf ~/.config/neofetch/config.conf
 
 ##i3blocks##
 
-
 rm ~/.i3blocks.conf
 ln -s ~/dotfiles/.i3blocks.conf ~/.i3blocks.conf
+
+
+##power-menu##
+sudo ln -s ~/dotfiles/rofi-power-menu /usr/bin/rofi-power-menu
