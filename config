@@ -16,7 +16,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:arial 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -199,12 +199,13 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks
 	position top
+        separator_symbol "❬"
         font pango:3270 Nerd Font 12
     colors {
-        background #09111a
-        separator #00ff00
-        focused_workspace #333333 #00ff00 #000000
-        inactive_workspace #333333 #09111a #00ff00
+        background #2a2a1b
+        separator #A0A453
+        focused_workspace #353626 #A0A453 #000000
+        inactive_workspace #353626 #353626 #A0A453
 
     }
 
@@ -220,12 +221,12 @@ default_floating_border pixel 1
 
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/wallpaper.jpg
 exec --no-startup-id ibus exit
-#exec_always --no-startup-id picom -f
+exec_always --no-startup-id compton --experimental-backends --backend glx --xrender-sync-fence
 
 # Change language
 exec_always setxkbmap -layout us,br -option grp:alt_shift_toggle
 
-client.focused #74ac6d #285577 #ffffff #74ac6d #74ac6d
+client.focused #A0A453 #285577 #ffffff #A0A453 #A0A453
 
 #workspace 1 output eDP-1
 #workspace 2 output HDMI-1-1
