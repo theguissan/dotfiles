@@ -64,7 +64,7 @@ bindsym $mod+Print exec gnome-screenshot -a
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+p exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 # A more modern dmenu replacement is rofi:
