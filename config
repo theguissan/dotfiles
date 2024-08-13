@@ -66,6 +66,7 @@ bindsym $mod+Print exec gnome-screenshot -a
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+g exec --no-startup-id gnome-control-center
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+p exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
@@ -204,10 +205,10 @@ bar {
         separator_symbol "❬"
         font pango:3270 Nerd Font 12
     colors {
-        background #2a2a1b
-        separator #A0A453
-        focused_workspace #353626 #A0A453 #000000
-        inactive_workspace #353626 #353626 #A0A453
+        background #0e1311
+        separator #c3e2c3
+        focused_workspace #0e1311 #04260e #c3e2c3
+        inactive_workspace #0e1311 #0e1311 #c3e2c3
 
     }
 
@@ -221,14 +222,14 @@ default_floating_border pixel 1
 
 #######START#######
 
-exec --no-startup-id feh --bg-fill $HOME/dotfiles/wallpaper.jpg
+exec --no-startup-id feh --bg-fill $HOME/dotfiles/wpp.jpg
 exec --no-startup-id ibus exit
 exec_always --no-startup-id compton --experimental-backends --backend glx --xrender-sync-fence
 
 # Change language
-exec_always setxkbmap -layout us,br -option grp:alt_shift_toggle
+exec_always setxkbmap -layout br,us -option grp:alt_shift_toggle
 
-client.focused #A0A453 #285577 #ffffff #A0A453 #A0A453
+client.focused #c3e2c3 #04260e #c3e2c3 #c3e2c3 #c3e2c3
 
 #workspace 1 output eDP-1
 #workspace 2 output HDMI-1-1
