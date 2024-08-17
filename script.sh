@@ -13,21 +13,23 @@
 sudo apt install unzip \
 	neofetch \
 	rofi \
-	picom \
 	cava \
 	fonts-noto-color-emoji \
 	cava \
-	alacritty
+	alacritty \
+	brightnessctl
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
-
+wget https://github.com/ryanosis/nerd-fonts/releases/download/v3.1.1/ProFont.zip
 #sudo mv 3270.zip CascadiaCode.zip /usr/local/share/fonts
 sudo unzip 3270.zip -d /usr/local/share/fonts
 sudo unzip CascadiaCode.zip -d /usr/local/share/fonts
 sudo unzip FiraCode.zip -d /usr/local/share/fonts
-rm FiraCode.zip CascadiaCode.zip 3270.zip
+sudo unzip ProFont.zip -d /usr/local/share/fonts
+
+rm FiraCode.zip CascadiaCode.zip 3270.zip ProFont.zip
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 ##GIT##
 
@@ -61,11 +63,6 @@ ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 rm ~/.config/i3/config
 ln -s ~/dotfiles/config ~/.config/i3/config
 
-##NEOFETCH##
-
-rm ~/.config/neofetch/config.conf
-ln -s ~/dotfiles/config.conf ~/.config/neofetch/config.conf
-
 ##i3blocks##
 
 rm ~/.i3blocks.conf
@@ -74,3 +71,16 @@ ln -s ~/dotfiles/.i3blocks.conf ~/.i3blocks.conf
 
 ##power-menu##
 sudo ln -s ~/dotfiles/rofi-power-menu /usr/bin/rofi-power-menu
+
+##picom##
+
+sudo ln ~/dotfiles/picom.conf ~/.config/picom.conf
+
+##dunst##
+sudo ln -s ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
+
+##rofi theme##
+
+mkdir -p ~/.local/share/rofi/{themes,}
+
+sudo ln -s ~/dotfiles/squared-everforest.rasi ~/.local/share/rofi/themes/squared-everforest.rasi

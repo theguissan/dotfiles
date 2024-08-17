@@ -31,7 +31,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -67,7 +67,7 @@ bindsym $mod+Print exec gnome-screenshot -a
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+g exec --no-startup-id gnome-control-center
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -i -show drun -modi drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+p exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 # A more modern dmenu replacement is rofi:
@@ -122,6 +122,12 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+
+
+#adjust brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && pkill -RTMIN+13
+bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl set 5%- && pkill -RTMIN+13
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -217,14 +223,14 @@ bar {
 gaps inner 15px
 gaps outer 1px
 
-default_border pixel 2
+default_border pixel 3
 default_floating_border pixel 1
 
 #######START#######
 
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/wpp.jpg
 exec --no-startup-id ibus exit
-exec_always --no-startup-id compton --experimental-backends --backend glx --xrender-sync-fence
+exec_always --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
 
 # Change language
 exec_always setxkbmap -layout br,us -option grp:alt_shift_toggle
