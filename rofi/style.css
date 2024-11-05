@@ -1,0 +1,63 @@
+@define-color soft-blue #89b4fa;
+@define-color base rgba(30,30,46,0.7);
+@define-color grey #999999;
+@define-color purple #b4befe;
+
+#window {
+    background-color: @base;
+    border: 3px solid @purple;
+    margin-right: 200px;
+    border-radius: 10px;
+}
+
+/*
+#outer-box {
+    background-color: rgba(20, 20,20, 0.7);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}*/
+
+#input {
+    color: @purple;
+    border: 2px solid @purple;
+    border-radius: 20px;
+
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    box-shadow: none;
+    background-color: @base;
+}
+
+#input:focus {
+    color: @purple;
+    border: 2px solid @purple;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    box-shadow: none;
+    background-color: @base;
+}
+
+#entry {
+	font-family: ProFont Windows Nerd Font;
+	border-radius: 20px;
+	margin: 5px;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-left: 10px;
+}
+
+#entry:focus {
+    border: 2px solid @purple;
+}
+
+#img {
+  margin-right: 10px;
+}
+
+
