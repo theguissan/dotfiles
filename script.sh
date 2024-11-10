@@ -16,9 +16,10 @@ sudo pacman -S --noconfirm --needed waybar \
 	base-devel \
 	curl \
 	lazygit \
-        noto-fonts-cjk \
+  noto-fonts-cjk \
 	noto-fonts \
-	noto-fonts-emoji 
+	noto-fonts-emoji \
+  npm
 }
 
 remove_unnecessary_packages() {
@@ -28,8 +29,6 @@ remove_unnecessary_packages() {
 
 
 install_paru() {
-
-
 
 	if [ ! -f $(which paru) ]; then
 		
@@ -43,7 +42,7 @@ install_paru() {
 
 		cd paru && makepkg -si
 		cd .. && rm -rf paru/
-
+    echo "PARU INSTALLED..."
 	fi
 
 	echo "UPDADING PACKAGES..."
@@ -63,12 +62,28 @@ install_other_packages() {
 		tmux \
 		wlogout \
 		swaylock \
-	        hyprshot
+	  hyprshot 
+
 }
 
+install_lunarvim() {
+  
+  echo "INSTALLING LUNARVIM..."
+	paru -Syu --noconfirm --needed lunarvim-git
+
+	sh /usr/share/lunarvim/init-lvim.sh
+
+  if [ -f "$HOME/.config/lvim/config.lua" ]; then
+    rm "$HOME/.config/lvim/config.lua"
+    ln -s "$PWD/lunarvim/config.lua" "$HOME/.config/lvim"
+  fi
+
+  echo "LUNARVIM INSTALLED..."
+}
 
 install_terminal_dependencies() {
 
+  echo "INSTALLING TERMINAL DEPENDENCIES..."
 	# Install oh-my-zsh.
 	0>/dev/null sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
@@ -92,6 +107,8 @@ install_terminal_dependencies() {
 	sudo cp -r ~/.oh-my-zsh /etc/skel/
 	sudo chmod -R 755 /etc/skel/
 	sudo chown -R root:root /etc/skel/ 
+  
+  echo "TERMINAL DEPENDENCIES FINISHED..."
 }
 
 
@@ -106,6 +123,8 @@ add_dotfiles_in_system() {
 
 apply_hyprland_customizations() {
 
+
+  echo "ADDING HYPRLAND CUSTOMIZATIONS..."
 
 	if [ -e "$HOME/.config/hypr/hyprland.conf" ]; then
 		rm "$HOME/.config/hypr/hyprland.conf"
@@ -135,6 +154,7 @@ apply_hyprland_customizations() {
 
 	ln -s "$PWD/hypr/wofi" "$HOME/.config/hypr"
 
+  echo "HYPRLAND CUSTOMIZATIONS FINISHED..."
 }
 
 
@@ -142,7 +162,8 @@ apply_hyprland_customizations() {
 #remove_unnecessary_packages
 #install_essential_packages
 #install_paru
-install_other_packages
+#install_other_packages
+install_lunarvim
 #add_dotfiles_in_system
 #apply_hyprland_customizations
-install_terminal_dependencies
+#install_terminal_dependencies
