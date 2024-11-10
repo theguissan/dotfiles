@@ -28,8 +28,8 @@
   color: @sky;
 }
 
-#window.empty #window{
-  background: none;
+window#waybar.empty #window {
+  background: transparent;
 }
 
 
