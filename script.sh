@@ -84,6 +84,7 @@ install_terminal_dependencies() {
 	sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
 	# Move ".zcompdump-*" file to "$ZSH/cache" directory.
 	sed -i -e '/source \$ZSH\/oh-my-zsh.sh/i export ZSH_COMPDUMP=\$ZSH\/cache\/.zcompdump-\$HOST' ~/.zshrc
+	echo 'alias ls="colorls --sd"' >> ~/.zshrc
 	# Configure the default ZSH configuration for new users.
 	sudo cp ~/.zshrc /etc/skel/
 	sudo cp ~/.p10k.zsh /etc/skel/
@@ -143,4 +144,4 @@ apply_hyprland_customizations() {
 install_other_packages
 #add_dotfiles_in_system
 #apply_hyprland_customizations
-#install_terminal_dependencies
+install_terminal_dependencies
