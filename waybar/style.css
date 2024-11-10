@@ -19,6 +19,20 @@
   margin-left: 1rem;
 }
 
+#window {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+  padding: 5px;
+  color: @sky;
+}
+
+#window.empty #window{
+  background: none;
+}
+
+
 #workspaces button {
   color: @lavender;
   border-radius: 1rem;
