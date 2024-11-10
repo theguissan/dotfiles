@@ -57,7 +57,10 @@ install_other_packages() {
 		nwg-look \
 		codium \
 		vlc \
-		colorls
+		colorls \
+		catppuccin-cursors-mocha \
+		catppuccin-gtk-theme-mocha \
+		tmux
 }
 
 
