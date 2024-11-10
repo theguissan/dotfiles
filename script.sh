@@ -62,7 +62,8 @@ install_other_packages() {
 		catppuccin-gtk-theme-mocha \
 		tmux \
 		wlogout \
-		swaylock
+		swaylock \
+	        hyprshot
 }
 
 
