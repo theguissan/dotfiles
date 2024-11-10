@@ -55,12 +55,14 @@ install_other_packages() {
 
 	paru -Syu --noconfirm --needed google-chrome \
 		nwg-look \
-		codium \
+		vscodium-bin \
 		vlc \
-		colorls \
+		lscolors-git \
 		catppuccin-cursors-mocha \
 		catppuccin-gtk-theme-mocha \
-		tmux
+		tmux \
+		wlogout \
+		swaylock
 }
 
 
@@ -138,7 +140,7 @@ apply_hyprland_customizations() {
 #remove_unnecessary_packages
 #install_essential_packages
 #install_paru
-#install_other_packages
+install_other_packages
 #add_dotfiles_in_system
-apply_hyprland_customizations
+#apply_hyprland_customizations
 #install_terminal_dependencies
