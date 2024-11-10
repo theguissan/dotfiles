@@ -122,6 +122,12 @@ apply_hyprland_customizations() {
 	fi
 	ln -s "$PWD/waybar" "$HOME/.config"
 
+	if [ -d "$HOME/.config/hypr/wofi" ]; then
+		rm -rf "$HOME/.config/hypr/wofi"
+	fi
+
+	ln -s "$PWD/hypr/wofi" "$HOME/.config/hypr"
+
 }
 
 
