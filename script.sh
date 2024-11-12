@@ -28,6 +28,16 @@ remove_unnecessary_packages() {
 }
 
 
+configure_keyboard() {
+
+  if [ ! -f "/etc/modprobe.d/hid_apple.conf" ]; then 
+    sudo ln -s "$PWD/hid_apple.conf" /etc/modprobe.d/hid_apple.conf
+  fi
+
+  sudo sed -i 's/FILES=()/FILES=(\/etc\/modprobe.d\/hid_apple.conf)/g' /etc/mkinitcpio.conf
+
+  sudo mkinitcpio -p linux 
+}
 install_paru() {
 
 	if [ ! -f $(which paru) ]; then
@@ -62,7 +72,7 @@ install_other_packages() {
 		tmux \
 		wlogout \
 		swaylock \
-	  hyprshot 
+	  flameshot-gui
 
 }
 
@@ -157,13 +167,13 @@ apply_hyprland_customizations() {
   echo "HYPRLAND CUSTOMIZATIONS FINISHED..."
 }
 
-
+configure_keyboard
 #add_dotfiles_in_system
 #remove_unnecessary_packages
 #install_essential_packages
 #install_paru
 #install_other_packages
-install_lunarvim
+#install_lunarvim
 #add_dotfiles_in_system
 #apply_hyprland_customizations
 #install_terminal_dependencies
