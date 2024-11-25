@@ -72,7 +72,8 @@ install_other_packages() {
 		tmux \
 		wlogout \
 		swaylock \
-	  flameshot-gui
+	  flameshot-gui \
+	  zellij
 
 }
 
